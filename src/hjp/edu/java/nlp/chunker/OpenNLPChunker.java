@@ -23,12 +23,14 @@ import opennlp.tools.tokenize.TokenizerModel;
 
 public class OpenNLPChunker {
 
+	public static String binDir = "E:\\MacBook\\Workspace\\Tempshop";
+
 	public static String[] Tokener(String sent) {
 		InputStream modelIn = null;
 		TokenizerModel model = null;
 
 		try {
-			modelIn = new FileInputStream("../Library/OpenNLP/bin/en-token.bin");
+			modelIn = new FileInputStream(binDir + "/Library/OpenNLP/bin/en-token.bin");
 			model = new TokenizerModel(modelIn);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -53,7 +55,7 @@ public class OpenNLPChunker {
 		POSModel model = null;
 
 		try {
-			modelIn = new FileInputStream("../Library/OpenNLP/bin/en-pos-maxent.bin");
+			modelIn = new FileInputStream(binDir + "/Library/OpenNLP/bin/en-pos-maxent.bin");
 			model = new POSModel(modelIn);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -78,7 +80,7 @@ public class OpenNLPChunker {
 		ChunkerModel model = null;
 
 		try {
-			modelIn = new FileInputStream("../Library/OpenNLP/bin/en-chunker.bin");
+			modelIn = new FileInputStream(binDir + "/Library/OpenNLP/bin/en-chunker.bin");
 			model = new ChunkerModel(modelIn);
 		} catch (IOException e) {
 			e.printStackTrace();
